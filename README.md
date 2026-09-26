@@ -31,8 +31,6 @@ Together, DMIS and RD define four operational regimes:
 - **Over-Reactive Instability** — high representation response, high prediction degradation
 - **Pathological Rigidity** — low representation response, high prediction degradation
 
-The repository also includes experiments for incremental diagnostic value, matched-error analysis, alternative representation metrics, invariance checks, representation steering, structural-access sensitivity, SUMO replication, and mixing-weight sensitivity.
-
 ## 🗂️ Datasets
 
 | Dataset | # Nodes | # Timesteps | Time Span | Interval | Type |
@@ -92,8 +90,6 @@ Official source trees / local checkpoints are expected under the project asset r
 ├── 📄 requirements.txt
 └── 📘 README.md
 ```
-
-Temporary caches, bytecode, backup snapshots, and manuscript-section version folders are intentionally excluded from this release.
 
 ## 🧰 Installation
 
@@ -166,10 +162,6 @@ Foundation models are isolated behind subprocess workers because their official 
 - Lag-Llama
 
 Install each official implementation in its own environment (see `scripts/env/`) and place the corresponding local checkpoints under `$CAUSALGAP_ROOT/model_weights/`. The main `requirements.txt` intentionally contains only the shared benchmark dependencies.
-
-## 🚦 SUMO experiments
-
-SUMO experiments require a local SUMO installation in addition to the Python requirements. The scripts expect the `sumo`, `netconvert`, and `duarouter` binaries, together with compatible `sumolib` and `traci` Python modules. Configure `SUMO_HOME` according to your SUMO installation before running the source builder or replication experiments.
 
 ## 📊 Outputs
 
