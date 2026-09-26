@@ -1,0 +1,19 @@
+Chronos:
+  checkpoint: /data/wanganna/CausalGap/model_weights/Chronos
+  env_python: /data/wanganna/envs/chronos/bin/python
+  mode: zero_shot
+  num_samples: 100
+TimesFM:
+  checkpoint: /data/wanganna/CausalGap/model_weights/TimesFM/torch_model.ckpt
+  env_python: /data/wanganna/envs/timesfm/bin/python
+  mode: zero_shot
+Moirai:
+  checkpoint: /data/wanganna/CausalGap/model_weights/Moirai
+  env_python: /data/wanganna/envs/moirai/bin/python
+  mode: zero_shot
+  num_samples: 100
+Lag-Llama:
+  checkpoint: /data/wanganna/CausalGap/model_weights/Lag-Llama/lag-llama.ckpt
+  env_python: /data/wanganna/envs/lagllama/bin/python
+  mode: zero_shot
+  num_samples: 100

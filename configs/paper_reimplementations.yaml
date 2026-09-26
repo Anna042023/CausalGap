@@ -1,0 +1,58 @@
+CausalGRIT:
+  source_status: "paper reimplementation; no official code available"
+  paper_specified:
+    treatment_candidates: physical_graph_edges
+    confounder_search: k_hop_spatial_plus_previous_time_parents
+    backdoor_regressor: RandomForest
+    speed_intervention: "do(X=70) vs do(X=0)"
+    causal_edge_refinement: "row-normalized causal prior * learnable base mask * input-conditioned mask"
+    belief_encoder: Gaussian_plus_planar_flows
+    temporal_belief_gate: true
+    temporal_model: GRU
+    prediction_residual: x_last
+    EGC: input_conditioned_counterfactual_edge_residual
+    training_loss: "MSE + annealed KL; EGC adds counterfactual prediction + consistency"
+  publication_unspecified_defaults:
+    rf_trees: 32
+    rf_max_samples: 4096
+    rf_eval_samples: 256
+    k_hop: 2
+    max_adjustment_nodes: 32
+    flow_steps: 4
+    refine_rank: 16
+    egc_epsilon: 0.10
+    kl_beta_max: 0.001
+    kl_steepness: 10.0
+    lambda_main: 1.0
+    lambda_consistency: 0.1
+    graph_reg_weight: 0.0001
+    non_speed_intervention: empirical_q05_to_q95
+    optimizer: Adam
+    learning_rate: 0.001
+    paper_profile_epochs: 60
+  scalability_note: "The paper maps x_last to an N×N mask but does not specify the MLP dimensions. This implementation uses a low-rank factorization so the method remains feasible on BJTaxi (N=1024)."
+
+TF-MVGNN:
+  source_status: "paper reimplementation; no official code available"
+  paper_specified:
+    causal_graph: "A_C = A_R elementwise A_TE"
+    te_threshold: 0.6
+    learnable_graph: "softmax(ReLU(E1 E2^T))"
+    DL_GNN_paths: [indegree, outdegree, learnable]
+    aggregation_K: 3
+    DL_GNN_layers: 1
+    DL_GNN_units: 64
+    GRU_layers: 1
+    GRU_units: 64
+    loss: MSE
+    optimizer: Adam
+    learning_rate: 0.001
+  publication_unspecified_defaults:
+    te_estimator: "discrete one-lag conditional mutual information"
+    te_bins: 8
+    te_history: 1
+    te_normalization: row_max_before_threshold
+    te_max_samples: 8192
+    paper_profile_batch_size: 32
+    paper_profile_epochs: 50
+  leakage_control: "TE graph is estimated from train_x only; validation/test are never used."
