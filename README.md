@@ -35,22 +35,16 @@ The repository also includes experiments for incremental diagnostic value, match
 
 ## 🗂️ Datasets
 
-The data loader supports eight observational traffic / mobility datasets plus controlled synthetic and SUMO-based environments.
-
-| Dataset | Resolution | Forecast protocol | Source format |
-|---|---:|---|---|
-| NYCTaxi | 30 min | historical context → next step | ST-SSL format |
-| NYCBike1 | 60 min | historical context → next step | ST-SSL format |
-| NYCBike2 | 30 min | historical context → next step | ST-SSL format |
-| BJTaxi | 30 min | historical context → next step | ST-SSL format |
-| METR-LA | 5 min | previous 12 steps → next 12 steps | DCRNN format |
-| PEMS-BAY | 5 min | previous 12 steps → next 12 steps | DCRNN format |
-| PEMS04 | 5 min | previous 12 steps → next 12 steps | ASTGCN/raw format |
-| PEMS08 | 5 min | previous 12 steps → next 12 steps | ASTGCN/raw format |
-| Controlled Synthetic | configurable | intervention-controlled dynamics | generated |
-| Abstract SUMO | configurable | simulation-based structural replication | SUMO |
-
-The default split for supervised traffic datasets is chronological **7:1:2** (train/validation/test).
+| Dataset | # Nodes | # Timesteps | Time Span | Interval | Type |
+|:---|---:|---:|:---|:---|:---|
+| NYCTaxi | 200 | 2,880 | Jan-Mar 2015 | 30 min | Taxi flow |
+| NYCBike1 | 128 | 4,392 | Apr-Sep 2014 | 1 hour | Bike flow |
+| NYCBike2 | 200 | 2,976 | Jul-Aug 2016 | 30 min | Bike flow |
+| BJTaxi | 1024 | 5,596 | Mar-Jun 2015 | 30 min | Taxi flow |
+| METR-LA | 207 | 34,272 | Mar-Jun 2012 | 5 min | Traffic speed |
+| PeMS-BAY | 325 | 52,116 | Jan-May 2017 | 5 min | Traffic speed |
+| PeMS04 | 307 | 16,992 | Jan-Feb 2018 | 5 min | Traffic flow |
+| PeMS08 | 170 | 17,856 | Jul-Aug 2016 | 5 min | Traffic flow |
 
 ## 🧠 Model coverage
 
