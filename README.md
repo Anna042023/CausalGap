@@ -63,28 +63,28 @@ Official source trees / local checkpoints are expected under the project asset r
 ├── 🧠 causalgap/                       # Core benchmark library
 │   ├── models/                        # Unified model adapters and registry
 │   ├── data.py                        # Dataset loading and chronological splits
-│   ├── interventions.py               # Structural / temporal interventions
+│   ├── interventions.py               # Structural/temporal interventions
 │   ├── evaluator.py                   # DMIS, RD and intervention evaluation
 │   ├── metrics.py                     # Prediction and representation metrics
 │   └── trainer.py                     # Shared supervised training utilities
-├── ⚙️ configs/                         # Model / adaptation configuration files
+├── ⚙️ configs/                         # Model/adaptation configuration files
 ├── 🧪 experiments/
 │   ├── observational_diagnostics/     # Main DMIS–RD benchmark on observed datasets
 │   ├── dmis_calibration/              # Calibrated diagnostic analysis
 │   ├── diagnostic_robustness/         # Multi-seed robustness checks
 │   ├── diagnostic_visualization/      # Paper-ready DMIS–RD figures
 │   ├── incremental_value/             # H1 weak-to-strong diagnostic value
-│   ├── sumo_source_builder/           # SUMO network / demand preparation
+│   ├── sumo_source_builder/           # SUMO network/demand preparation
 │   ├── sumo_incremental_value/        # H1 analysis on SUMO-derived environments
 │   ├── sumo_replication/              # Abstract SUMO replication and regime analysis
-│   ├── regime_stability/              # Quantile / clustering stability of regimes
+│   ├── regime_stability/              # Quantile/clustering stability of regimes
 │   ├── matched_error/                 # Prediction-error-matched diagnostic analysis
-│   ├── representation_robustness/     # CKA / SVCCA / RSA / PWCCA checks
-│   ├── invariance_checks/             # Rotation / permutation / scaling invariance
+│   ├── representation_robustness/     # CKA/SVCCA/RSA/PWCCA checks
+│   ├── invariance_checks/             # Rotation/permutation/scaling invariance
 │   ├── representation_steering/       # Information-matched steering experiments
-│   ├── access_sensitivity/            # Track A vs. Track B / topology-input stress
+│   ├── access_sensitivity/            # Track A vs. Track B/topology-input stress
 │   └── alpha_sensitivity/             # DMIS mixing-weight sensitivity
-├── 🤖 foundation_workers/              # Chronos / TimesFM / Moirai / Lag-Llama bridges
+├── 🤖 foundation_workers/              # Chronos/TimesFM/Moirai/Lag-Llama bridges
 ├── 🛠️ tools/                           # Environment packing and utility scripts
 ├── 🚀 scripts/                         # Smoke tests and protocol examples
 ├── 📄 requirements.txt
@@ -118,8 +118,8 @@ Experiment scripts write generated artifacts under the selected experiment root,
 experiment_results/<experiment_name>/
 ├── runs/             # Per-model checkpoints and intervention evaluations
 ├── analysis/         # Aggregated analyses
-├── tables/           # CSV / LaTeX tables
-├── figures/          # PDF / SVG / PNG figures
+├── tables/           # CSV/LaTeX tables
+├── figures/          # PDF/SVG/PNG figures
 ├── diagnostics/      # Coverage and protocol audits
 └── metadata/         # Reproducibility information
 ```
@@ -130,5 +130,5 @@ experiment_results/<experiment_name>/
 - Track A and Track B are evaluated separately and are not pooled into a single ranking.
 - Internal structural interventions preserve aligned target support; observational topology-input stress tests are reported separately from intervention-consistent causal claims.
 - The representation interface uses row-aligned centered representations before DMIS calculation.
-- The default DMIS mixing weight is `alpha = 0.5`; sensitivity scripts recompute alternative values from saved response components without retraining forecasting models.
+- The default DMIS mixing weight is $alpha = 0.5$; sensitivity scripts recompute alternative values from saved response components without retraining forecasting models.
 - Completed interventions are written incrementally where supported so interrupted runs can be resumed.
