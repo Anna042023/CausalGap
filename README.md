@@ -91,48 +91,6 @@ Official source trees / local checkpoints are expected under the project asset r
 └── 📘 README.md
 ```
 
-## 🧰 Installation
-
-Python 3.10+ is recommended.
-
-```bash
-git clone <repository-url>
-cd CausalGap
-
-python -m venv .venv
-source .venv/bin/activate
-pip install --upgrade pip
-pip install -r requirements.txt
-```
-
-### Project assets
-
-The code separates the repository from large datasets, upstream model sources, and checkpoints. Point `CAUSALGAP_ROOT` to the asset directory:
-
-```bash
-export CAUSALGAP_ROOT=/path/to/causalgap_assets
-export CAUSALGAP_RUN_ROOT=$CAUSALGAP_ROOT/runs
-```
-
-A typical asset layout is:
-
-```text
-causalgap_assets/
-├── datasets/
-│   ├── NYCTaxi/
-│   ├── NYCBike1/
-│   ├── NYCBike2/
-│   ├── BJTaxi/
-│   ├── METR-LA/
-│   ├── PEMS-BAY/
-│   ├── PEMS04/
-│   └── PEMS08/
-├── class1/ ... class5/                # Upstream model source trees
-├── model_weights/                     # Local foundation-model checkpoints
-├── envs/                              # Cached intervention environments
-└── experiment_results/                # Generated outputs
-```
-
 ## ▶️ Main experiment entry points
 
 Run commands from the repository root. Most scripts also expose `--help` for paths, devices, seeds, and output locations.
@@ -176,8 +134,6 @@ experiment_results/<experiment_name>/
 ├── diagnostics/      # Coverage and protocol audits
 └── metadata/         # Reproducibility information
 ```
-
-Large outputs are not tracked by Git; see `.gitignore`.
 
 ## ✅ Reproducibility notes
 
