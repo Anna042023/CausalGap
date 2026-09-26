@@ -130,5 +130,5 @@ experiment_results/<experiment_name>/
 - Track A and Track B are evaluated separately and are not pooled into a single ranking.
 - Internal structural interventions preserve aligned target support; observational topology-input stress tests are reported separately from intervention-consistent causal claims.
 - The representation interface uses row-aligned centered representations before DMIS calculation.
-- The default DMIS mixing weight is $alpha = 0.5$; sensitivity scripts recompute alternative values from saved response components without retraining forecasting models.
+- The default DMIS mixing weight is $\alpha = 0.5$; sensitivity scripts recompute alternative values from saved response components without retraining forecasting models.
 - Completed interventions are written incrementally where supported so interrupted runs can be resumed.
