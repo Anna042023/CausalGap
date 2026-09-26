@@ -110,17 +110,6 @@ Run commands from the repository root. Most scripts also expose `--help` for pat
 | Structural-access sensitivity | `python experiments/access_sensitivity/analyze_access_sensitivity.py --help` |
 | Mixing-weight sensitivity | `python experiments/alpha_sensitivity/run_alpha_sensitivity.py --help` |
 
-## 🧩 Foundation models
-
-Foundation models are isolated behind subprocess workers because their official implementations have different dependency stacks. The release contains workers for:
-
-- Chronos
-- TimesFM
-- Moirai
-- Lag-Llama
-
-Install each official implementation in its own environment (see `scripts/env/`) and place the corresponding local checkpoints under `$CAUSALGAP_ROOT/model_weights/`. The main `requirements.txt` intentionally contains only the shared benchmark dependencies.
-
 ## 📊 Outputs
 
 Experiment scripts write generated artifacts under the selected experiment root, typically with the following structure:
