@@ -44,6 +44,8 @@ Together, DMIS and RD define four operational regimes:
 | PeMS04 | 307 | 16,992 | Jan-Feb 2018 | 5 min | Traffic flow |
 | PeMS08 | 170 | 17,856 | Jul-Aug 2016 | 5 min | Traffic flow |
 
+Datasets are available at [Google Drive](https://drive.google.com/file/d/1rlYNzV9O6bBuT6plmYAc5RuFwFFQKZI5/view?usp=sharing).
+
 ## 🧠 Model coverage
 
 The benchmark contains 21 runnable architectures grouped into five families:
