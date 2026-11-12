@@ -1,3 +1,0 @@
-Do not run legacy combine_and_analyze_final.sh for this abstract SUMO evidence.
-Primary H1 is Synthetic-only.
-Abstract SUMO is a descriptive replication dataset, not held-out-setting H1 or steering.
