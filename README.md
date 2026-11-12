@@ -1,4 +1,4 @@
-# 🚦 CausalGap: Benchmarking Query Correctness for Causal Analysis over Versioned Traffic Data**
+# 🚦 CausalGap: Benchmarking Query Correctness for Causal Analysis over Versioned Traffic Data
 
 CausalGap checks whether traffic-forecast comparisons remain valid when road graphs and cached predictions change. It covers a METR-LA checkpoint replay, paired-record integrity checks, and SQL execution studies in SQLite and DuckDB.
 
@@ -18,8 +18,6 @@ CausalGap checks whether traffic-forecast comparisons remain valid when road gra
 | 🗃️ Database correctness | `db_experiments/` | Deterministic forecast records, exact answers, fault injection and query plans |
 | 📈 Query resources | `db_extension/` | Randomized SQLite/DuckDB blocks, CPU, memory and thread settings |
 | 📊 Grouping granularity | `db_granularity/` | Run, origin, sensor and horizon aggregation |
-
-The real-data experiments hold observed future targets fixed while changing graph input. They measure model-input sensitivity, not physical traffic interventions. The relational workload uses generated integer records. Its 21 model IDs are database keys, **not** 21 newly fitted models.
 
 ## 🗂️ Datasets
 
